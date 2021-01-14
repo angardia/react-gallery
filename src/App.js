@@ -14,7 +14,7 @@ function App() {
 
   }, [])
 
-  function test(e) {
+  function buildSquares(e) {
     const id = e.target.selectedIndex + 1;
     setValue(e.target.value)
     fetch(`https://jsonplaceholder.typicode.com/photos?albumId=${id}`)
@@ -28,7 +28,7 @@ function App() {
     <div className="App">
       <h1>Select an album:</h1>
 
-      <select value={value} onChange={(e) => test(e)} >
+      <select value={value} onChange={(e) => buildSquares(e)} >
         {albums.map((album, i) => {
           return <option key={i} id={i} value={album.title}>{album.title}</option>;
         })}
